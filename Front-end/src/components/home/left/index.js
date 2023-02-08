@@ -70,6 +70,12 @@ export default function LeftHome({ user }) {
           img="../../images/ytb.png"
           name="My Youtube channel"
         />
+
+        <Shortcut
+          link="https://www.instagram.com/med_hajji7/"
+          img="../../images/insta.png"
+          name="My Instagram "
+        />
       </div>
       <div className={`fb_copyright ${visible && "relative_fb_copyright"}`}>
         <Link to="/">Privacy </Link>
@@ -78,10 +84,14 @@ export default function LeftHome({ user }) {
         <span>. </span>
         <Link to="/">Advertising </Link>
         <span>. </span>
+        <Link to="/">
+          Ad Choices <i className="ad_choices_icon"></i>{" "}
+        </Link>
+        <span>. </span>
         <Link to="/"></Link>Cookies <span>. </span>
         <Link to="/">More </Link>
         <span>. </span> <br />
-        HBS © 2023
+        Meta © 2022
       </div>
     </div>
   );

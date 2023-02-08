@@ -9,16 +9,14 @@ import "./style.css";
 export default function Home() {
   const { user } = useSelector((user) => ({ ...user }));
   return (
-    <>
+    <div className="home">
       <Header />
-      <div className="home">
-        <LeftHome user={user} />
-        <div className="home_middle">
-          <Stories />
-          <CreatePost user={user} />
-        </div>
-        <RightHome user={user} />
+      <LeftHome user={user} />
+      <div className="home_middle">
+        <Stories />
+        <CreatePost user={user} />
       </div>
-    </>
+      <RightHome user={user} />
+    </div>
   );
 }
