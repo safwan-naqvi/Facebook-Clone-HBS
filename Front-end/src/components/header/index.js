@@ -72,7 +72,7 @@ export default function Header() {
         <Link to="/" className="middle_icon hover1">
           <Market color={color} />
         </Link>
-        <Link to="/" className="middle_icon hover1">
+        <Link to="/" className="middle_icon hover1 ">
           <Gaming color={color} />
         </Link>
       </div>
@@ -90,7 +90,9 @@ export default function Header() {
               setShowAllMenu((prev) => !prev);
             }}
           >
-            <Menu />
+            <div style={{ transform: "translateY(2px)" }}>
+              <Menu />
+            </div>
           </div>
 
           {showAllMenu && <AllMenu />}
@@ -111,7 +113,9 @@ export default function Header() {
               setShowUserMenu((prev) => !prev);
             }}
           >
-            <ArrowDown />
+            <div style={{ transform: "translateY(2px)" }}>
+              <ArrowDown />
+            </div>
           </div>
 
           {showUserMenu && <UserMenu user={user} />}

@@ -1,7 +1,7 @@
-import { stories } from "../../data/home";
-import { ArrowRight, Plus } from "../../svg";
-import Story from "./Story";
+import { ArrowRight, Plus } from "../../../svg";
 import "./style.css";
+import { stories } from "../../../data/home";
+import Story from "./Story";
 export default function Stories() {
   return (
     <div className="stories">
@@ -12,15 +12,15 @@ export default function Stories() {
           className="create_story_img"
         />
         <div className="plus_story">
-          <Plus color="#ffffff" />
+          <Plus color="#fff" />
         </div>
-        <div className="create_story_text">Create Story</div>
+        <div className="story_create_text">Create Story</div>
       </div>
       {stories.map((story, i) => (
         <Story story={story} />
       ))}
       <div className="white_circle">
-        <ArrowRight color="#65677b" />
+        <ArrowRight color="#65676b" />
       </div>
     </div>
   );
