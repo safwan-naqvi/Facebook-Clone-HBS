@@ -152,3 +152,7 @@ exports.login = async (req, res) => {
     return res.status(500).json({ message: err.message });
   }
 };
+
+exports.auth = (req, res) => {
+  res.json("Authentication Successfull!");
+};
