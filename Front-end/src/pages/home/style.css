@@ -119,6 +119,9 @@
   .left_home::-webkit-scrollbar {
     display: none;
   }
+  .popup {
+    width: 70vw !important;
+  }
 }
 @media (max-width: 620px) {
   .left_home {
@@ -159,7 +162,7 @@
   position: fixed;
   box-shadow: 0px 1px 2px var(--shadow-1);
   background: var(--bg-primary);
-  width: 30vw;
+  width: 40vw;
   height: 200px;
   top: 40%;
   left: 50%;

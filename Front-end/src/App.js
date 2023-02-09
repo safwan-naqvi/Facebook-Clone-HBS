@@ -12,7 +12,7 @@ function App() {
         <Route element={<LoggedInRoutes />} />
         <Route path="/profile" element={<Profile />} exact />
         <Route path="/" element={<Home />} exact />
-        <Route path="/activate/:id" element={<Activate />} exact />
+        <Route path="/activate/:token" element={<Activate />} exact />
       </Routes>
     </div>
   );
