@@ -1,7 +1,7 @@
 import { Formik, Form } from "formik";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
-import LoginInput from "../inputs/loginInput";
+import LoginInput from "../../components/inputs/loginInput";
 import { useState } from "react";
 import DotLoader from "react-spinners/DotLoader";
 import axios from "axios";

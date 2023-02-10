@@ -6,28 +6,28 @@ const userSchema = mongoose.Schema(
   {
     first_name: {
       type: String,
-      required: [true, "first_name is required"],
+      required: [true, "first name is required"],
       trim: true,
       text: true,
     },
     last_name: {
       type: String,
-      required: [true, "last_name is required"],
+      required: [true, "last name is required"],
       trim: true,
       text: true,
     },
-    user_name: {
+    username: {
       type: String,
       required: [true, "username is required"],
       trim: true,
       text: true,
       unique: true,
     },
+
     email: {
       type: String,
       required: [true, "email is required"],
       trim: true,
-      unique: true,
     },
     password: {
       type: String,
@@ -50,17 +50,17 @@ const userSchema = mongoose.Schema(
     },
     bYear: {
       type: Number,
-      required: [true],
+      required: true,
       trim: true,
     },
     bMonth: {
       type: Number,
-      required: [true],
+      required: true,
       trim: true,
     },
     bDay: {
       type: Number,
-      required: [true],
+      required: true,
       trim: true,
     },
     verified: {
@@ -85,7 +85,6 @@ const userSchema = mongoose.Schema(
     },
     search: [
       {
-        //Search History of user
         user: {
           type: ObjectId,
           ref: "User",
@@ -119,14 +118,7 @@ const userSchema = mongoose.Schema(
       },
       relationship: {
         type: String,
-        enum: [
-          "Single",
-          "In a relationship",
-          "Married",
-          "Divorced",
-          "Complicated",
-          "Engaged",
-        ],
+        enum: ["Single", "In a relationship", "Married", "Divorced"],
       },
       instagram: {
         type: String,
@@ -146,7 +138,7 @@ const userSchema = mongoose.Schema(
     ],
   },
   {
-    timestamps: true, //time of user created etc etc also update times
+    timestamps: true,
   }
 );
 

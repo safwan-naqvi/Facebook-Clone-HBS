@@ -18,7 +18,6 @@ export default function Activate() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const { token } = useParams();
-
   useEffect(() => {
     activateAccount();
   }, []);

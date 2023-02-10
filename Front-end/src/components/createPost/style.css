@@ -6,32 +6,29 @@
   width: 100%;
   cursor: pointer;
 }
-
 .createPost_header {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 10px 17px 5px 15px;
 }
-
 .createPost_header img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
-
 .open_post {
   background: var(--bg-forth);
   color: var(--color-secondary);
   height: 41px;
-  display: flex;
   flex: 1;
-  align-items: center;
-  padding: 10px;
   border-radius: 50px;
   font-size: 17px;
   line-height: 21px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
 }
 .create_splitter {
   height: 1px;
@@ -39,13 +36,11 @@
   background: var(--bg-third);
   margin: 7px 10px;
 }
-
 .createPost_body {
   padding: 0 10px 8px 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
-
 .createPost_icon {
   display: flex;
   align-items: center;
