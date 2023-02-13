@@ -16,7 +16,6 @@ export default function Home() {
       <div className="home_middle">
         <Stories />
         {user.verified === false && <SendVerification user={user} />}
-
         <CreatePost user={user} />
       </div>
       <RightHome user={user} />

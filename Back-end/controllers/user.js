@@ -166,3 +166,22 @@ exports.sendVerification = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+exports.findUser = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email }).select("-password");
+
+    if (!user) {
+      return res.status(400).json({
+        message: "Accound does not exist.",
+      });
+    }
+    return res.status(200).json({
+      email: user.email,
+      picture: user.picture,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
