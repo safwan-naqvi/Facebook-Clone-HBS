@@ -10,7 +10,7 @@ export default function SearchAccount({
   error,
   setError,
   setLoading,
-  setUserInfo,
+  setUserInfos,
   setVisible,
 }) {
   const validateEmail = Yup.object({
@@ -19,24 +19,23 @@ export default function SearchAccount({
       .email("Must be a valid email address.")
       .max(50, "Email address can't be more than 50 characters."),
   });
-
   const handleSearch = async () => {
     try {
       setLoading(true);
+
       const { data } = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/findUser`,
         { email }
       );
-
-      setUserInfo(data);
+      setUserInfos(data);
       setVisible(1);
       setError("");
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       setError(error.response.data.message);
     }
   };
-
   return (
     <div className="reset_form">
       <div className="reset_form_header">Find Your Account</div>
@@ -64,7 +63,7 @@ export default function SearchAccount({
             />
             {error && <div className="error_text">{error}</div>}
             <div className="reset_form_btns">
-              <Link to="/login" className="grey_btn">
+              <Link to="/login" className="gray_btn">
                 Cancel
               </Link>
               <button type="submit" className="blue_btn">

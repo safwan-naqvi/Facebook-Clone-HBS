@@ -15,13 +15,13 @@ export default function Reset() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [visible, setVisible] = useState(0);
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
   const [password, setPassword] = useState("");
   const [conf_password, setConf_password] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [userInfo, setUserInfo] = useState("");
+  const [userInfos, setUserInfos] = useState("");
   const logout = () => {
     Cookies.set("user", "");
     dispatch({
@@ -29,6 +29,7 @@ export default function Reset() {
     });
     navigate("/login");
   };
+  console.log(userInfos);
   return (
     <div className="reset">
       <div className="reset_header">
@@ -61,17 +62,31 @@ export default function Reset() {
             error={error}
             setError={setError}
             setLoading={setLoading}
-            setUserInfo={setUserInfo}
+            setUserInfos={setUserInfos}
             setVisible={setVisible}
           />
         )}
-        {visible === 1 && userInfo && <SendEmail userInfo={userInfo} />}
+        {visible === 1 && userInfos && (
+          <SendEmail
+            email={email}
+            userInfos={userInfos}
+            error={error}
+            setError={setError}
+            setLoading={setLoading}
+            setUserInfos={setUserInfos}
+            setVisible={setVisible}
+          />
+        )}
         {visible === 2 && (
           <CodeVerification
             user={user}
             code={code}
             setCode={setCode}
             error={error}
+            setError={setError}
+            setLoading={setLoading}
+            setVisible={setVisible}
+            userInfos={userInfos}
           />
         )}
         {visible === 3 && (
@@ -80,6 +95,11 @@ export default function Reset() {
             conf_password={conf_password}
             setConf_password={setConf_password}
             setPassword={setPassword}
+            error={error}
+            setError={setError}
+            setLoading={setLoading}
+            setVisible={setVisible}
+            userInfos={userInfos}
           />
         )}
       </div>
