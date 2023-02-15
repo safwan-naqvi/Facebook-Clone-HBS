@@ -1,5 +1,13 @@
+import { useEffect, useRef, useState } from "react";
 import "./style.css";
+
+import EmojiPickerBackgrounds from "./EmojiPickerBackgrounds";
+import AddToYourPost from "./AddToYourPost";
 export default function CreatePostPopup({ user }) {
+  const [text, setText] = useState("");
+  const [showPrev, setShowPrev] = useState(false);
+  const textRef = useRef(null);
+  console.log(text);
   return (
     <div className="blur">
       <div className="postBox">
@@ -10,10 +18,10 @@ export default function CreatePostPopup({ user }) {
           <span>Create Post</span>
         </div>
         <div className="box_profile">
-          <img src={user.picture} alt="" />
+          <img src={user?.picture} alt="" className="box_profile_img" />
           <div className="box_col">
             <div className="box_profile_name">
-              {user.first_name} {user.last_name}
+              {user?.first_name} {user?.last_name}
             </div>
             <div className="box_privacy">
               <img src="../../../icons/public.png" alt="" />
@@ -22,6 +30,28 @@ export default function CreatePostPopup({ user }) {
             </div>
           </div>
         </div>
+
+        {!showPrev && (
+          <>
+            <div className="flex_center">
+              <textarea
+                ref={textRef}
+                maxLength="100"
+                value={text}
+                placeholder={`What's on your mind, ${user?.first_name}`}
+                className="post_input"
+                onChange={(e) => setText(e.target.value)}
+              ></textarea>
+            </div>
+            <EmojiPickerBackgrounds
+              text={text}
+              textRef={textRef}
+              setText={setText}
+            />
+          </>
+        )}
+        <AddToYourPost />
+        <button className="post_submit">Post</button>
       </div>
     </div>
   );
