@@ -8,8 +8,6 @@ export default function CreatePostPopup({ user }) {
   const [text, setText] = useState("");
   const [showPrev, setShowPrev] = useState(true);
   const [images, setImages] = useState([]);
-
-  console.log(text);
   return (
     <div className="blur">
       <div className="postBox">
@@ -44,9 +42,10 @@ export default function CreatePostPopup({ user }) {
             setText={setText}
             images={images}
             setImages={setImages}
+            setShowPrev={setShowPrev}
           />
         )}
-        <AddToYourPost />
+        <AddToYourPost setShowPrev={setShowPrev} />
         <button className="post_submit">Post</button>
       </div>
     </div>

@@ -26,7 +26,7 @@ export default function EmojiPickerBackgrounds({ setText, user, text, type2 }) {
             maxLength="100"
             value={text}
             placeholder={`What's on your mind, ${user?.first_name}`}
-            className={`post_input ${type2 && "input2"}`}
+            className={`post_input ${type2 && "input2"} scrollbar`}
             onChange={(e) => setText(e.target.value)}
           ></textarea>
         </div>
