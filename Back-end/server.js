@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const fileUpload = require("express-fileupload");
 const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -9,7 +10,11 @@ const PORT = process.env.PORT || 3000;
 //Lecture of CORS we added Origin but for project I skipped that work
 app.use(cors());
 app.use(express.json());
-
+app.use(
+  fileUpload({
+    useTempFiles: true,
+  })
+);
 //now to use all routes in router folder
 //we will use readdirsync from filesystem 'fs'
 const { readdirSync } = require("fs"); //this will return array of all route fuke in forlder
