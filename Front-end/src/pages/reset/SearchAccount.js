@@ -63,7 +63,7 @@ export default function SearchAccount({
             />
             {error && <div className="error_text">{error}</div>}
             <div className="reset_form_btns">
-              <Link to="/login" className="gray_btn">
+              <Link to="/login" className="grey_btn">
                 Cancel
               </Link>
               <button type="submit" className="blue_btn">

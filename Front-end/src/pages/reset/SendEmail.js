@@ -54,7 +54,7 @@ export default function SendEmail({
         </div>
       )}
       <div className="reset_form_btns">
-        <Link to="/login" className="gray_btn">
+        <Link to="/login" className="grey_btn">
           Not You ?
         </Link>
         <button

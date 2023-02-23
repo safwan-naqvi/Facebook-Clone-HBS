@@ -410,3 +410,37 @@
   margin-top: 10px;
 }
 /* change Font color if dark bg */
+
+/* -------------post Error----- */
+.postError {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 80;
+  color: #b3221f;
+  gap: 10px;
+  animation: anim 0.6s;
+  border-radius: 5px;
+  padding: 3rem;
+}
+
+.postError_error {
+  width: 75%;
+  font-weight: 600;
+}
+
+@keyframes anim {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
