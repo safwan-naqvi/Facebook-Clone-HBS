@@ -74,7 +74,9 @@ function App() {
           <Route path="/profile" element={<Profile />} exact />
           <Route
             path="/"
-            element={<Home setCreatePostVisible={setCreatePostVisible} />}
+            element={
+              <Home setCreatePostVisible={setCreatePostVisible} posts={posts} />
+            }
             exact
           />
           <Route path="/activate/:token" element={<Activate />} exact />
